@@ -1,14 +1,18 @@
-import React from "react";
+import React, { Suspense } from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import { Provider } from "react-redux";
 
 import store from './store'
+import Loader from "./components/loader/Loader";
 
 const app = (
   <Provider store={store}>
-    <App/>
+    <Suspense fallback={<Loader/>}>
+      <App/>
+    </Suspense>
+    
   </Provider>
 )
 

@@ -1,0 +1,17 @@
+.wrapper {
+  background-color: red;
+}
+.container {
+  display: flex;
+  justify-content: space-between;
+}
+.container > a {
+  color: #fff;
+  font-size: 20px;
+  text-transform: capitalize;
+  text-decoration: none;
+}
+a.active {
+  color: darkblue;
+  font-weight: 700;
+}
