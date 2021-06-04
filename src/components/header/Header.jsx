@@ -19,6 +19,12 @@ const Header = () => {
             {item}
           </NavLink>
         ))}
+        <NavLink exact to={`/todo`} activeClassName={styles.active}>
+          Todo
+        </NavLink>
+        <NavLink exact to={`/todo-context`} activeClassName={styles.active}>
+          Todo-context
+        </NavLink>
       </div>
     </div>
   );

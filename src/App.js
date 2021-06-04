@@ -9,6 +9,7 @@ const Categories = React.lazy(() =>
   import("./containers/categories/Categories")
 );
 const Product = React.lazy(() => import("./containers/product/Product"));
+const TodoContext = React.lazy(()=>import("./containers/todo-context/TodoContext"))
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
             </Fragment>
           )}
         />
+        <Route to="/todo-context" component={TodoContext}/>
         <Route path="*" render={() => <div>No match!!!</div>} />
       </Switch>
     </Router>
