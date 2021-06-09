@@ -1,3 +1,4 @@
+import { createSelector } from "reselect";
 import { createAction, handleActions } from "redux-actions";
 import { getCategoriesRequest } from "../services/swapi";
 
@@ -27,6 +28,25 @@ export default handleActions(
 );
 
 export const productSelector = (state) => state[namespace];
+// export const realyProductItemsSelector = (state) => {
+//   const { productItem } = productSelector(state);
+//   return (
+//     productItem &&
+//     Object.keys(productItem).length > 0 &&
+//     Object.keys(productItem).filter((e) => typeof productItem[e] === "string")
+//   );
+// };
+
+export const realyProductItemsSelector = createSelector(
+  [productSelector],
+  ({ productItem }) => {
+    return (
+      productItem &&
+      Object.keys(productItem).length > 0 &&
+      Object.keys(productItem).filter((e) => typeof productItem[e] === "string")
+    );
+  }
+);
 
 export const getProductRequest = (categoryName, productId) => {
   return async (dispatch) => {

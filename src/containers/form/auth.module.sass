@@ -1,0 +1,21 @@
+.wrapper
+    border: 1px solid black
+    padding: 50px
+.form
+    display: flex
+    flex-direction: column
+
+    button
+        width: 80px
+        margin-left: auto
+.input
+    margin-bottom: 10px
+    font-size: 20px
+    &:focus
+        &+label
+            color: red
+    &__wrapper
+        display: flex
+        flex-direction: column-reverse
+    &__label
+        text-transform: capitalize

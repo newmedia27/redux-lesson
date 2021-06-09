@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import ToDo from "./containers/todo/todo";
 import Title from "./components/title/title";
 import Header from "./components/header";
+import Auth from "./containers/form/Auth";
 
 const Home = React.lazy(() => import("./containers/home"));
 const Categories = React.lazy(() =>
@@ -31,6 +32,7 @@ function App() {
             </Fragment>
           )}
         />
+        <Route to="/auth" component={Auth}/>
         <Route path="*" render={() => <div>No match!!!</div>} />
       </Switch>
     </Router>
